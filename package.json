@@ -16,7 +16,9 @@
     "babel-polyfill": "6.8.0",
     "bootstrap": "3.3.6",
     "jquery": "2.2.3",
+    "mongoose": "^4.11.10",
     "react": "15.0.2",
+    "react-bootstrap": "^0.31.2",
     "react-dom": "15.0.2",
     "react-redux": "4.4.5",
     "react-router": "2.4.0",
@@ -26,6 +28,7 @@
     "toastr": "2.1.2"
   },
   "devDependencies": {
+    "axios": "^0.16.2",
     "babel-cli": "6.8.0",
     "babel-core": "6.8.0",
     "babel-loader": "6.2.4",
@@ -34,6 +37,7 @@
     "babel-preset-react": "6.5.0",
     "babel-preset-react-hmre": "1.1.1",
     "babel-register": "6.8.0",
+    "body-parser": "^1.17.2",
     "cheerio": "0.22.0",
     "colors": "1.1.2",
     "compression": "1.6.1",
