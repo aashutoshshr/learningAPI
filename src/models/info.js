@@ -17,6 +17,6 @@ let infoSchema = mongoose.Schema({
     versionKey: false
 });
 
-let Info = mongoose.model('Info', infoSchema, 'mydata');
+let Info = mongoose.model('Infos', infoSchema, 'mydata');
 
 export default Info;

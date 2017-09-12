@@ -14,7 +14,7 @@ const data = require('../controllers/dataController');
 // define the home page route
 router.route('/').get(data.fetchData);
 
-router.route('/post').get(data.addData);
+// router.route('/post').get(data.addData);
 
 // router.route('/post').post(addData);
 // router.post
