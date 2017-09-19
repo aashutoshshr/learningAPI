@@ -7,7 +7,10 @@ export default class App extends Component{
     constructor(){
         super();
         this.state = {
-            infos: []
+            infos: [
+                // {a: 1, b: 2, c: 3},
+                // {a: 4, b: 5, c: 6}            
+            ]
         }        
     }
     
@@ -21,7 +24,7 @@ export default class App extends Component{
             baseURL: 'http://localhost:8080'
         }).then(function(result){
                 var apiData = result.data;
-                that.setState({ infos: { apiData }
+                that.setState({ infos: apiData 
             })            
         }).catch(function(error) {
                 console.log(error);
@@ -32,17 +35,14 @@ export default class App extends Component{
         const data = this.state.infos;
         console.log(data);
         if (data.length !== 0){
-            const mapedData = data.map((info) => 
-            <li>{info}</li>
-            );
             return (
                 <div>
-                    {mapedData}
+                    {data.map((data) => 
+                    <li key={data._id}>{data.name}</li>
+                    )}
                 </div>
-                );                
-            }
-            return null;                
+            );
         }
-        
-    
+        return null;                
+    }
 }

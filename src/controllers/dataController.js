@@ -1,4 +1,5 @@
 import Info from '../models/info';
+import axios from 'axios';
 
 // fetching data from DB
 
@@ -12,21 +13,31 @@ exports.fetchData = function(req, res) {
 };
 
 // inserting data into the DB
+exports.addData = function(req, res) {
+    console.log(req.body);
+    // 
+    Info.insertMany(req.body);  
+    // res.redirect('/data');  
+};
 
-// exports.addData = function(req, res) {
-//     let data = [{
-//             "name":"Bikram",
-//             "address":"nepal",
-//             "comment":"namaste"
-//         },
-//         {
-//             "name":"Nischal",
-//             "address":"kathmandu",
-//             "comment":"yo"
-//         }
-//     ];
-//     Info.insertMany(data);  
-//     res.redirect('/data');  
-// };
+// deleting data from DB
+exports.deleteData = function(req, res) {
+    // res.send("Hello world");
+    const dataRcv = req.params.id;
+    console.log(dataRcv);
+
+    Info.remove(({ _id: dataRcv }), (err, user) => {
+        // if (err) {
+        //   return res.json({
+        //     status: "error",
+        //     message: "error deleting user with id " + req.params.id
+        //   });
+        // }
+        // return res.json({
+        //   status: "success",
+        //   message: "User successfully deleted with id " + req.params.id
+        // });
+      });
+};
 
 
