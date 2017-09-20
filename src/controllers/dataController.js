@@ -22,7 +22,6 @@ exports.addData = function(req, res) {
 
 // deleting data from DB
 exports.deleteData = function(req, res) {
-    // res.send("Hello world");
     const dataRcv = req.params.id;
     console.log(dataRcv);
 
@@ -38,6 +37,12 @@ exports.deleteData = function(req, res) {
         //   message: "User successfully deleted with id " + req.params.id
         // });
       });
+};
+
+//editing data in DB
+exports.editData = function(req, res){
+    console.log(req.params.id);
+    Info.update({_id: req.params.id, name: req.body.name, address: req.body.address, comment: req.body.comment});
 };
 
 
